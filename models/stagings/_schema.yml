@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: stg_lynkid_orders
+    description: |
+      - An exported orders data from lynkid
+    columns:
+      - name: transaction_id
+        description: "{{ doc('lynkid_orders_transaction_id') }}"
+      - name: transaction_date
+        description: "{{ doc('lynkid_orders_transaction_date') }}"
+      - name: transaction_status
+        description: "{{ doc('lynkid_orders_transaction_status') }}"
+      - name: transaction_note
+        description: "{{ doc('lynkid_orders_transaction_note') }}"
+      - name: product_name
+        description: "{{ doc('lynkid_orders_product_name') }}"
+      - name: product_price
+        description: "{{ doc('lynkid_orders_product_price') }}"
+      - name: qty
+        description: "{{ doc('lynkid_orders_qty') }}"
+      - name: addon_detail
+        description: "{{ doc('lynkid_orders_addon_detail') }}"
+      - name: total_addon
+        description: "{{ doc('lynkid_orders_total_addon') }}"
+      - name: sub_total
+        description: "{{ doc('lynkid_orders_sub_total') }}"
+      - name: affiliate_fee
+        description: "{{ doc('lynkid_orders_affiliate_fee') }}"
+      - name: notif_fee
+        description: "{{ doc('lynkid_orders_notif_fee') }}"
+      - name: public_affiliate_fee
+        description: "{{ doc('lynkid_orders_public_affiliate_fee') }}"
+      - name: shipping_fee
+        description: "{{ doc('lynkid_orders_shipping_fee') }}"
+      - name: convenience_fee
+        description: "{{ doc('lynkid_orders_convenience_fee') }}"
+      - name: total
+        description: "{{ doc('lynkid_orders_total') }}"
+      - name: buyer_email
+        description: "{{ doc('lynkid_orders_buyer_email') }}"
+      - name: buyer_name
+        description: "{{ doc('lynkid_orders_buyer_name') }}"
+      - name: buyer_phone
+        description: "{{ doc('lynkid_orders_buyer_phone') }}"
+      - name: voucher
+        description: "{{ doc('lynkid_orders_voucher') }}"

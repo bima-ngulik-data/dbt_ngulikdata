@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: fivetran_gsheets
+    database: ngulik-data
+    schema: fivetran_lake
+    description: This is a source for all gsheets ingested through fivetran
+    tables:
+      - name: lynkid_orders
+        description: >
+          Order records from lynkid
