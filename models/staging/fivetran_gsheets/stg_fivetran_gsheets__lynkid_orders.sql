@@ -1,19 +1,23 @@
-with source as (
-    select *
-    from {{ source('fivetran_gsheets', 'lynkid_orders') }}
+with 
+
+source as (
+
+    select * from {{ source('fivetran_gsheets', 'lynkid_orders') }}
+
 ),
 
-rename_fields as (
+renamed as (
+
     select
 
         -- transaction_info
         ref as transaction_id,
-        transaction_date,
+        PARSE_DATE('%m/%d/%Y', transaction_date) as transaction_date,
         status as transaction_status,
         notes_opsional_ as transaction_note,
         -- product_info
         judul_barang as product_name,
-        harga as product_price,
+        harga as base_price,
         qty,
         sub_total,
         addon_detail,
@@ -36,7 +40,7 @@ rename_fields as (
         _row,
         _fivetran_synced
 
-from source
+    from source
 
 )
 
@@ -46,7 +50,7 @@ select
     transaction_status,
     transaction_note,
     product_name,
-    product_price,
+    base_price,
     qty,
     addon_detail,
     total_addon,
@@ -64,4 +68,4 @@ select
     voucher_code,
     _row,
     _fivetran_synced
-from rename_fields
+from renamed

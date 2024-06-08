@@ -3,7 +3,7 @@ with transaction_data as (
         buyer_email,
         buyer_name,
         buyer_phone
-    from {{ ref('stg_lynkid_orders') }}
+    from {{ ref('stg_fivetran_gsheets__lynkid_orders') }}
 )
 
 select distinct

@@ -23,7 +23,7 @@ with transaction_data as (
         voucher_code,
         _row,
         _fivetran_synced
-    from {{ ref('stg_lynkid_orders') }}
+    from {{ ref('stg_fivetran_gsheets__lynkid_orders') }}
 )
 
 select *

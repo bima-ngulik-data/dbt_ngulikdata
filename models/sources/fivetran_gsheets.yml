@@ -9,3 +9,11 @@ sources:
       - name: lynkid_orders
         description: >
           Order records from lynkid
+      
+      - name: tribelio_orders
+        description: >
+          Order records from tribelio
+      
+      - name: mayar_orders
+        description: >
+          Order records from mayar
