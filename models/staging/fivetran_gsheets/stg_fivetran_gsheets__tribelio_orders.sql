@@ -16,9 +16,9 @@ with
             price as product_price,
 
             -- buyer info
-            email as buyer_email,
-            name as buyer_name,
-            phone as buyer_phone,
+            email as customer_email,
+            name as customer_name,
+            cast(phone as string) as customer_phone,
 
             -- payment info
             voucher_code,

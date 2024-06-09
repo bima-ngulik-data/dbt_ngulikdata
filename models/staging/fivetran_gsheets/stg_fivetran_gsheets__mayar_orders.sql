@@ -25,9 +25,9 @@ renamed as (
         fee_mayar as platform_fee,
         nett as nett_amount,
         -- buyer_info
-        nama as buyer_name,
-        email as buyer_email,
-        hp as buyer_phone,
+        nama as customer_name,
+        email as customer_email,
+        cast(hp as string) as customer_phone,
         -- promotion_info
         kode_kupon as voucher_code,
         -- system_info
