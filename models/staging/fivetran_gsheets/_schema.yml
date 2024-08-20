@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_fivetran_gsheets__lynkid_orders
+    description: |
+      - transaction data from lynkid
+    config:
+      materialized: ephemeral
+
+  - name: stg_fivetran_gsheets__mayar_orders
+    description: |
+      - transaction data from mayar
+    config:
+      materialized: ephemeral
+
+  - name: stg_fivetran_gsheets__tribelio_orders
+    description: |
+      - transaction data from tribeliio
+    config:
+      materialized: ephemeral
