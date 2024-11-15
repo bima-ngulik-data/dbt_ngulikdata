@@ -17,3 +17,7 @@ sources:
       - name: mayar_orders
         description: >
           Order records from mayar
+
+      - name: lynkid_products
+        description: >
+          Product detail from lynkid

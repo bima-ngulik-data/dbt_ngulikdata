@@ -1,3 +1,5 @@
+{{ config(materialized='ephemeral') }}
+
 {% set platforms = ['lynkid', 'mayar', 'tribelio'] %}
 
 with 

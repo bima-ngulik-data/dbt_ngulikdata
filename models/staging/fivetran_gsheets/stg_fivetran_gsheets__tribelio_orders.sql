@@ -1,37 +1,41 @@
-with
+with source as (
+    
+    select * from {{ source("fivetran_gsheets", "tribelio_orders") }}
 
-    source as (select * from {{ source("fivetran_gsheets", "tribelio_orders") }}),
+),
 
-    renamed as (
+renamed as (
 
-        select
+    select
 
-            -- transaction info
-            sales_id as transaction_id,
-            status as transaction_status,
-            cast(tanggal as date) as transaction_date,
+        -- transaction info
+        transaction_id,
+        status as transaction_status,
+        date as transaction_date,
 
-            -- product info
-            produk as product_name,
-            price as product_price,
+        -- product info
+        product_name,
+        price as product_price,
 
-            -- buyer info
-            email as customer_email,
-            name as customer_name,
-            cast(phone as string) as customer_phone,
+        -- buyer info
+        email as customer_email,
+        name as customer_name,
+        cast(phone as string) as customer_phone,
 
-            -- payment info
-            voucher_code,
-            transaction_amount as transaction_amount,
-            voucher_amount as discount_percentage,
+        -- payment info
+        type as transaction_type,
+        voucher as voucher_code,
+        amount as transaction_amount,
+        commision,
+        net_profit,
 
-            -- system info
-            _row,
-            _fivetran_synced,
+        -- system info
+        _row,
+        _fivetran_synced,
 
-        from source
+    from source
 
-    )
+)
 
 select *
 from renamed
